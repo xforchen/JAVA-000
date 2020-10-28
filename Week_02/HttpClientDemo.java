@@ -28,17 +28,15 @@ public class HttpClientDemo {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            if (httpResponse != null) {
-                try {
-                    if (httpResponse != null) {
-                        httpResponse.close();
-                    }
-                    if (httpClient != null) {
-                        httpClient.close();
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
+            try {
+                if (httpResponse != null) {
+                    httpResponse.close();
                 }
+                if (httpClient != null) {
+                    httpClient.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
 
